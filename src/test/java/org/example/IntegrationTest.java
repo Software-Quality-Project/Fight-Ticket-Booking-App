@@ -1,5 +1,4 @@
 package org.example;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -107,5 +106,12 @@ public class IntegrationTest {
         // Authenticate user with incorrect password
         assertFalse(userAuthenticationManager.authenticateUser("Biden", "biden123"));
     }
+
+    @Test
+    public void testAppIntegration() {
+        // You can add integration tests for the App class here
+        // For example, you can use mocking frameworks like Mockito to mock user input via Scanner
+    }
 }
+
 

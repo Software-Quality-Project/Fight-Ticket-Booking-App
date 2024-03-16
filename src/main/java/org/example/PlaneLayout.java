@@ -6,7 +6,6 @@ public class PlaneLayout {
     public PlaneLayout(int rows, int columns) {
         layout = new char[rows][columns];
 
-
         // Initialize all seats as available
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
@@ -32,7 +31,6 @@ public class PlaneLayout {
                 layout[row][column] = 'B'; // 'B' represents booked seat
                 return true;
             } else {
-
                 // Seat is already booked
                 return false;
             }
@@ -47,9 +45,8 @@ public class PlaneLayout {
         for (int i = 0; i < layout.length; i++) {
             for (int j = 0; j < layout[0].length; j++) {
                 if (layout[i][j] == 'O') {
-
-                    //To convert the zero-based row and column indices to one-based indices
-                    //as seat numbers are numbered staring from 1.
+                    // To convert the zero-based row and column indices to one-based indices
+                    // as seat numbers are numbered staring from 1.
                     sb.append((i + 1)).append("-").append((j + 1)).append(" ");
                 }
             }
@@ -61,14 +58,33 @@ public class PlaneLayout {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < layout.length; i++) {
             for (int j = 0; j < layout[0].length; j++) {
-
-                // Append seat status (available or booked)
+                // Append seat status
                 sb.append(layout[i][j]).append(" ");
             }
 
-            // Move to next row
             sb.append("\n");
         }
         return sb.toString();
     }
+
+    public int getRows() {
+        return layout.length;
+    }
+
+    public int getColumns() {
+        return layout[0].length;
+    }
+
+    public char getSeatStatus(int row, int column) {
+        if (row >= 0 && row < layout.length && column >= 0 && column < layout[0].length) {
+            return layout[row][column];
+        } else {
+            throw new IllegalArgumentException("Invalid row or column index.");
+        }
+    }
+
+    public char[][] getLayout() {
+        return layout;
+    }
+
 }

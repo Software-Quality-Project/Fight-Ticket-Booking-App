@@ -28,7 +28,7 @@ public class FlightBookingManager {
         if (flights.containsKey(flightNumber)) {
             return flights.get(flightNumber);
         } else {
-            // Return null if the flight does not exist
+
             return null;
         }
     }
