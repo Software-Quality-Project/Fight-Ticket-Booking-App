@@ -47,7 +47,7 @@ public class App {
     private static void bookFlight() {
         try {
             // Prompt the user to enter the flight number
-            System.out.print("Enter the flight number: ");
+            System.out.print("Enter the flight number,pls: ");
             String flightNumber = scanner.nextLine();
 
             // Get available seats for the given flight
