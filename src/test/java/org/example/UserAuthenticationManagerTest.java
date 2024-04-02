@@ -19,15 +19,16 @@ public class UserAuthenticationManagerTest {
     @Test
     public void testAuthenticateUser() {
         // Test authenticating existing user with correct password
-        assertTrue(authenticationManager.authenticateUser("Ronaldo", "Ronaldo34"));
+        assertTrue(authenticationManager.authenticateUser("Ronaldo", "ronaldo34"));
 
         // Test authenticating existing user with incorrect password
         assertFalse(authenticationManager.authenticateUser("Ronaldo", "ronaldi43"));
 
         // Test authenticating non-existing user
-        assertTrue(authenticationManager.authenticateUser("newUser", "newPassword"));
+        assertFalse(authenticationManager.authenticateUser("newUser", "newPassword"));
 
         // Test authenticating newly added user
+        authenticationManager.registerUser("newUser", "newPassword");
         assertTrue(authenticationManager.authenticateUser("newUser", "newPassword"));
     }
 }

@@ -3,6 +3,9 @@ package org.example;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class FlightTimeCalculator {
 
     // Method to calculate total flight time

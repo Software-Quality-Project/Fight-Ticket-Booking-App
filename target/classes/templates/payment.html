@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Payment</title>
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .picture {
+            background-image: url("/background.jpg");
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .box {
+            background-color: silver;
+            width: 500px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            top: 45%;
+            margin: -125px 0 0 -250px;
+            border: 3px solid black;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+        }
+        h2 {
+            margin-top: 0;
+        }
+        .text {
+            margin: 20px 0;
+        }
+        .btn {
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn {
+            background-color: #ff4444;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="picture">
+    <div class="box">
+    <h2>Payment</h2>
+    <p th:if="${message}" th:text="${message}" style="color: red;"></p>
+    <form action="#" th:action="@{/payment}" method="post">
+        <input type="hidden" name="flightNumber" th:value="${flightNumber}" />
+        <input type="hidden" name="seatNumber" th:value="${seatNumber}" />
+        <p class="text">Amount: <input type="text" name="amount"/></p>
+        <p class="text">Card Number: <input type="text" name="cardNumber"/></p>
+        <p class="text">Expiry Date: <input type="text" name="expiryDate"/></p>
+        <p class="text">CVV: <input type="text" name="cvv"/></p>
+        <p><input type="submit" class="btn" value="Submit Payment"/></p>
+    </form>
+    </div>
+</div>
+</body>
+</html>

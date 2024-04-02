@@ -3,6 +3,9 @@ package org.example;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class FlightBookingManager {
 
     // Create flight database
@@ -12,8 +15,8 @@ public class FlightBookingManager {
     public FlightBookingManager() {
         // Initialize the flight database
         flights = new HashMap<>();
-        flights.put("DTK253", new Flight("DTK253", "TORONTO", "AMSTERDAM", "2024-12-01", "Economy"));
-        flights.put("XYZ456", new Flight("XYZ456", "CAIRO", "NAIROBI", "2024-12-10", "Business"));
+        flights.put("DTK253", new Flight("DTK253", "TORONTO", "AMSTERDAM", "Monday", "08:00", "Monday", "15:15" ,"Economy"));
+        flights.put("XYZ456", new Flight("XYZ456", "CAIRO", "NAIROBI", "Tuesday", "10:00" , "Tuesday" , "15:00" , "Business"));
 
     }
 

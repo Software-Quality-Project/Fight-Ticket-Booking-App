@@ -12,7 +12,7 @@ public class FlightBookingManagerTest {
         FlightBookingManager manager = new FlightBookingManager();
 
         // Test getting details for an existing flight
-        Flight expectedFlight = new Flight("ABC123", "JFK", "LAX", "2024-12-01", "Economy");
+        Flight expectedFlight = new Flight("ABC123", "JFK", "LAX", "Monday", "08:00", "Monday", "12:00", "Economy");
         assertEquals(expectedFlight, manager.getFlightDetails("ABC123"));
     }
 

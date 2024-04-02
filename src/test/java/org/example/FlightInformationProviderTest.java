@@ -26,8 +26,8 @@ public class FlightInformationProviderTest {
         assertEquals("DTK253", flight.getFlightNumber());
         assertEquals("TORONTO", flight.getDepartureAirport());
         assertEquals("AMSTERDAM", flight.getDestinationAirport());
-        assertEquals("2024-12-01", flight.getDepartureDate());
-        assertEquals("Economy", flight.getSeatClass());
+        assertEquals("Monday", flight.getDepartureDate());
+        assertEquals("Economy", flight.getFlightClass());
 
         // Test retrieving non-existing flight information
         Flight nonExistingFlight = provider.getFlightInformation("ABC123");

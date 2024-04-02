@@ -89,10 +89,10 @@ public class IntegrationTest {
         TicketFormatConverter ticketFormatConverter = new TicketFormatConverter();
 
         // Convert time to 12-hour format
-        assertEquals("05:30 pm", ticketFormatConverter.convertTo12HourFormat("17:30"));
+        assertEquals("05:30 PM", ticketFormatConverter.convertTo12HourFormat("17:30"));
 
         // Convert time to 24-hour format
-        assertEquals("17:30", ticketFormatConverter.convertTo24HourFormat("05:30 pm"));
+        assertEquals("17:30", ticketFormatConverter.convertTo24HourFormat("05:30 PM"));
     }
 
     @Test
@@ -100,8 +100,8 @@ public class IntegrationTest {
         // Authenticate existing user
         assertTrue(userAuthenticationManager.authenticateUser("Ronaldo", "ronaldo34"));
 
-        // Authenticate new user
-        assertTrue(userAuthenticationManager.authenticateUser("Messi", "messi10"));
+        // Authenticate user that does not exit
+        assertFalse(userAuthenticationManager.authenticateUser("Messi", "messi10"));
 
         // Authenticate user with incorrect password
         assertFalse(userAuthenticationManager.authenticateUser("Biden", "biden123"));

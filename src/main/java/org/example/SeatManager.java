@@ -3,6 +3,9 @@ package org.example;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class SeatManager {
 
     private Map<String, PlaneLayout> planeLayouts;
@@ -51,6 +54,7 @@ public class SeatManager {
             System.out.println("Seat " + seatNumber + " successfully booked for flight " + flightNumber + ".");
         } else {
             System.out.println("Seat " + seatNumber + " is already booked or invalid.");
+            return false;
         }
 
         return seatBooked;
