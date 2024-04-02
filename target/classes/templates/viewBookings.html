@@ -18,7 +18,7 @@
         }
         .box {
             background-color: silver;
-            width: 600px;
+            width: 750px;
             height: 300px;
             position: absolute;
             left: 50%;
@@ -91,8 +91,10 @@
             <th class = "text">Departure Airport</th>
             <th class = "text">Destination Airport</th>
             <th class = "text">Departure Date</th>
+            <th class = "text">Departure Time</th>
             <th class = "text">Arrival Date</th>
-            <th class = "text">Flight Time</th>
+            <th class = "text">Arrival Time</th>
+            <th class = "text">Flight Time (in mins)</th>
         </tr>
         <tr th:each="ticket : ${tickets}">
             <td th:text="${ticket.flightNumber}"></td>
@@ -101,7 +103,9 @@
             <td th:text="${ticket.departureAirport}"></td>
             <td th:text="${ticket.destinationAirport}"></td>
             <td th:text="${ticket.departureDate}"></td>
+            <td th:text="${ticket.departureTime}"></td>
             <td th:text="${ticket.arrivalDate}"></td>
+            <td th:text="${ticket.arrivalTime}"></td>
             <td th:text="${ticket.flightTime}"></td>
         </tr>
     </table>
