@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: binarycalc-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: binarycalc
+  template:
+    metadata:
+      labels:
+        app: binarycalc
+    spec:
+      containers:
+        - image: northamerica-northeast2-docker.pkg.dev/buoyant-history-415921/sofe3980u/binarycalc
+          name: binarycalc
+          ports:
+            - containerPort: 8080
+              name: binarycalc

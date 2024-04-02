@@ -12,7 +12,7 @@ public class FlightCancellationManagerTest {
         FlightCancellationManager manager = new FlightCancellationManager();
 
         // Test cancelling a booked flight with a valid flight number
-        assertTrue(manager.cancelFlight("ABC123"));
+        assertTrue(manager.cancelFlight("DTK253"));
     }
 
     @Test

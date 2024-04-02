@@ -16,10 +16,10 @@ public class SeatManagerTest {
     @Test
     public void testSelectSeat() {
         // Test booking a seat
-        assertTrue(seatManager.selectSeat("ABC123", "1-1"));
+        assertTrue(seatManager.selectSeat("DTK253", "1-1"));
 
         // Test booking an already booked seat
-        assertFalse(seatManager.selectSeat("ABC123", "2-1"));
+        assertFalse(seatManager.selectSeat("DTK253", "2-1"));
 
         // Test booking a seat on a non-existing flight
         assertFalse(seatManager.selectSeat("DEF789", "1-1"));
@@ -28,8 +28,8 @@ public class SeatManagerTest {
     @Test
     public void testGetAvailableSeats() {
         // Test getting available seats
-        System.out.println("Available seats for flight ABC123:");
-        seatManager.getAvailableSeats("ABC123");
+        System.out.println("Available seats for flight DTK253:");
+        seatManager.getAvailableSeats("DTK253");
 
         // Test getting available seats for a non-existing flight
         System.out.println("Available seats for flight DEF789:");
@@ -39,8 +39,8 @@ public class SeatManagerTest {
     @Test
     public void testViewPlaneLayout() {
         // Test viewing plane layout
-        System.out.println("Plane layout for flight ABC123:");
-        seatManager.viewPlaneLayout("ABC123");
+        System.out.println("Plane layout for flight DTK253:");
+        seatManager.viewPlaneLayout("DTK253");
 
         // Test viewing plane layout for a non-existing flight
         System.out.println("Plane layout for flight DEF789:");
