@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: binarycalc-deployment
+  name: flight-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: binarycalc
+      app: flight
   template:
     metadata:
       labels:
-        app: binarycalc
+        app: flight
     spec:
       containers:
-        - image: northamerica-northeast2-docker.pkg.dev/buoyant-history-415921/sofe3980u/binarycalc
-          name: binarycalc
+        - image: northamerica-northeast2-docker.pkg.dev/buoyant-history-415921/sofe3980u/flight
+          name: flight
           ports:
             - containerPort: 8080
-              name: binarycalc
+              name: flight
