@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flight Booking System - Booking Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    #bookingPage {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    li:hover {
+        background-color: #e9e9e9;
+    }
+</style>
+</head>
+<body>
+
+<!-- Booking Page -->
+<div id="bookingPage">
+    <h2>Available Flights</h2>
+    <ul id="flightList"></ul>
+</div>
+
+<script>
+// Flight data
+const flights = {
+    "DTK253": { flightNumber: "DTK253", origin: "TORONTO", destination: "AMSTERDAM", date: "2024-12-01", classType: "Economy" },
+    "XYZ456": { flightNumber: "XYZ456", origin: "CAIRO", destination: "NAIROBI", date: "2024-12-10", classType: "Business" },
+    "ABC789": { flightNumber: "ABC789", origin: "NEW YORK", destination: "LONDON", date: "2024-12-15", classType: "First Class" },
+    "JKL012": { flightNumber: "JKL012", origin: "SYDNEY", destination: "TOKYO", date: "2024-12-20", classType: "Economy" },
+    "MNO345": { flightNumber: "MNO345", origin: "PARIS", destination: "ROME", date: "2024-12-05", classType: "Business" },
+    "PQR678": { flightNumber: "PQR678", origin: "MOSCOW", destination: "ISTANBUL", date: "2024-12-12", classType: "Economy" },
+    "STU901": { flightNumber: "STU901", origin: "BEIJING", destination: "SHANGHAI", date: "2024-12-08", classType: "First Class" },
+    "VWX234": { flightNumber: "VWX234", origin: "BERLIN", destination: "MADRID", date: "2024-12-25", classType: "Economy" },
+    "YZA567": { flightNumber: "YZA567", origin: "DELHI", destination: "MUMBAI", date: "2024-12-18", classType: "Business" },
+    "BCD890": { flightNumber: "BCD890", origin: "ROME", destination: "ATHENS", date: "2024-12-30", classType: "Economy" }
+};
+
+// Display available flights on the booking page
+window.onload = function() {
+    const flightList = document.getElementById("flightList");
+    flightList.innerHTML = ""; // Clear previous list
+    
+    for (const flightNumber in flights) {
+        const flight = flights[flightNumber];
+        const listItem = document.createElement("li");
+        listItem.textContent = `${flight.flightNumber} - ${flight.origin} to ${flight.destination} on ${flight.date}`;
+        listItem.addEventListener("click", function() {
+            selectFlight(flightNumber);
+        });
+        flightList.appendChild(listItem);
+    }
+}
+
+// Handle flight selection and navigate to layout page
+function selectFlight(flightNumber) {
+    const selectedFlight = flights[flightNumber];
+    console.log("Selected Flight:", selectedFlight);
+    
+    // Redirect to layout page with flight details
+    window.location.href = `layout.html?flightNumber=${flightNumber}`;
+}
+</script>
+
+</body>
+</html>
